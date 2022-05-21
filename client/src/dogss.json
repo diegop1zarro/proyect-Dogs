@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "name": "Affenpinscher",
+    "temperament": "Stubborn, Curious, Playful, Adventurous, Active, Fun-loving",
+    "image": "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg",
+    "life_span": "10 - 12 years",
+    "weight": "13 - 15",
+    "height": "23 cm a  29 cm",
+    "origin": "Germany, France"
+  },
+  {
+    "id": 2,
+    "name": "Afghan Hound",
+    "temperament": "Aloof, Clownish, Dignified, Independent, Happy",
+    "image": "https://cdn2.thedogapi.com/images/hMyT4CDXR.jpg",
+    "life_span": "10 - 13 years",
+    "weight": "16 - 18",
+    "height": "64 cm a  69 cm",
+    "origin": "Afghanistan, Iran, Pakistan"
+  },
+  {
+    "id": 3,
+    "name": "African Hunting Dog",
+    "temperament": "Wild, Hardworking, Dutiful",
+    "image": "https://cdn2.thedogapi.com/images/rkiByec47.jpg",
+    "life_span": "11 years",
+    "weight": "19 - 21",
+    "height": 0,
+    "origin": ""
+  },
+  {
+    "id": 4,
+    "name": "Airedale Terrier",
+    "temperament": "Outgoing, Friendly, Alert, Confident, Intelligent, Courageous",
+    "image": "https://cdn2.thedogapi.com/images/1-7cgoZSh.jpg",
+    "life_span": "10 - 13 years",
+    "weight": "22 - 24",
+    "height": "53 cm a  58 cm",
+    "origin": "United Kingdom, England"
+  },
+  {
+    "id": 5,
+    "name": "Akbash Dog",
+    "temperament": "Loyal, Independent, Intelligent, Brave",
+    "image": "https://cdn2.thedogapi.com/images/26pHT3Qk7.jpg",
+    "life_span": "10 - 12 years",
+    "weight": "25 - 27",
+    "height": "71 cm a  86 cm",
+    "origin": ""
+  },
+  {
+    "id": 6,
+    "name": "Akita",
+    "temperament": "Docile, Alert, Responsive, Dignified, Composed, Friendly, Receptive, Faithful, Courageous",
+    "image": "https://cdn2.thedogapi.com/images/BFRYBufpm.jpg",
+    "life_span": "10 - 14 years",
+    "weight": "28 - 30",
+    "height": "61 cm a  71 cm"
+  },
+  {
+    "id": 7,
+    "name": "Alapaha Blue Blood Bulldog",
+    "temperament": "Loving, Protective, Trainable, Dutiful, Responsible",
+    "image": "https://cdn2.thedogapi.com/images/33mJ-V3RX.jpg",
+    "life_span": "12 - 13 years",
+    "weight": "31 - 33",
+    "height": "46 cm a  61 cm"
+  },
+  {
+    "id": 8,
+    "name": "Alaskan Husky",
+    "temperament": "Friendly, Energetic, Loyal, Gentle, Confident",
+    "image": "https://cdn2.thedogapi.com/images/-HgpNnGXl.jpg",
+    "life_span": "10 - 13 years",
+    "weight": "34 - 36",
+    "height": "58 cm a  66 cm"
+  },
+  {
+    "id": 9,
+    "name": "Alaskan Malamute",
+    "temperament": "Friendly, Affectionate, Devoted, Loyal, Dignified, Playful",
+    "image": "https://cdn2.thedogapi.com/images/dW5UucTIW.jpg",
+    "life_span": "12 - 15 years",
+    "weight": "37 - 39",
+    "height": "58 cm a  64 cm"
+  },
+  {
+    "id": 10,
+    "name": "American Bulldog",
+    "temperament": "Friendly, Assertive, Energetic, Loyal, Gentle, Confident, Dominant",
+    "image": "https://cdn2.thedogapi.com/images/pk1AAdloG.jpg",
+    "life_span": "10 - 12 years",
+    "weight": "40 - 42",
+    "height": "56 cm a  69 cm"
+  },
+  {
+    "id": 11,
+    "name": "American Bully",
+    "temperament": "Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous",
+    "image": "https://cdn2.thedogapi.com/images/sqQJDtbpY.jpg",
+    "life_span": "8 – 15 years",
+    "weight": "43 - 45",
+    "height": "36 cm a  43 cm"
+  },
+  {
+    "id": 12,
+    "name": "American Eskimo Dog",
+    "temperament": "Friendly, Alert, Reserved, Intelligent, Protective",
+    "image": "https://cdn2.thedogapi.com/images/Bymjyec4m.jpg",
+    "life_span": "12 - 15 years",
+    "weight": "46 - 48",
+    "height": "38 cm a  48 cm"
+  },
+  {
+    "id": 13,
+    "name": "American Eskimo Dog (Miniature)",
+    "temperament": "Friendly, Alert, Reserved, Intelligent, Protective",
+    "image": "https://cdn2.thedogapi.com/images/_gn8GLrE6.jpg",
+    "life_span": "13 – 15 years",
+    "weight": "49 - 50",
+    "height": "23 cm a  30 cm"
+  },
+  {
+    "id": 14,
+    "name": "American Foxhound",
+    "temperament": "Kind, Sweet-Tempered, Loyal, Independent, Intelligent, Loving",
+    "image": "https://cdn2.thedogapi.com/images/S14n1x9NQ.jpg",
+    "life_span": "8 - 15 years",
+    "weight": "51 - 53",
+    "height": "53 cm a  71 cm"
+  },
+  {
+    "id": 15,
+    "name": "American Pit Bull Terrier",
+    "temperament": "Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous",
+    "image": "https://cdn2.thedogapi.com/images/HkC31gcNm.png",
+    "life_span": "10 - 15 years",
+    "weight": "54 - 56",
+    "height": "43 cm a  53 cm"
+  },
+  {
+    "id": 16,
+    "name": "American Staffordshire Terrier",
+    "temperament": "Tenacious, Friendly, Devoted, Loyal, Attentive, Courageous",
+    "image": "https://cdn2.thedogapi.com/images/rJIakgc4m.jpg",
+    "life_span": "12 - 15 years",
+    "weight": "57 - 58",
+    "height": "43 cm a  48 cm"
+  }]
