@@ -19,33 +19,11 @@ if(name){
             res.status(200).send(breeds)
         }else{
             // res.status(400).send(error)
-            res.status(200).send(AllBreeds)
+            res.status(404).send('no found')
         }
 }else{res.status(200).send(AllBreeds)  }
 })
-// router.get('/dogs?name=', async (req,res)=>{
-//     const name = req.query.name
-//     let AllBreeds = await getAllData()
-//     if(name){
-//         let breeds = await AllBreeds.filter(e=> e.name.toLowerCase().includes(name.toLowerCase()))
-//         if(breeds.length){
-//             res.status(200).send(breeds)
-//         }else{
-//             res.status(400).send('errooor')
-//         }
-//     }else{
-//         res.status(200).send(AllBreeds)
-//     }
-// })
-// router.get('/dogs', async (req,res)=>{
-//     let AllBreeds = await getAllData()
-//     if(AllBreeds){
-//             res.status(200).send(AllBreeds)
-//         }else{
-//             res.status(400).send('errooor')
-//         }
-    
-// })
+
 router.get('/dogs/:id',async (req,res)=>{
 const id = req.params.id
 const error = {error :'No se ha encontrado detalles para esa raza'}
@@ -102,23 +80,6 @@ try {
         console.log(error)
     }
 })
-
-// router.get('/filterBytemperament',async (req,res)=>{
-//     const {temperamentos} = req.query
-//     let alldogs = await getAllData()
-//     try {
-//         if(temperamentos){
-//             let filters = await alldogs.filter((e)=>e.temperament === temperamentos)
-//             if(filters.length){
-
-//                 res.status(200).send(filters)
-//             }else res.status(404).send('no papi')
-//         }
-//     } catch (error) {
-//         res.status(404).send(error)
-//     }
-// })
-
 
 
 // Configurar los routers

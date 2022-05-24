@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import '../../Style/DogCard.css'
-import {peso} from '../../Controllers/index.js'
+// import {peso} from '../../Controllers/index.js'
 
 
 export default function DogCard (props){
@@ -15,7 +15,7 @@ export default function DogCard (props){
 <img className="img" src={props.image} alt={props.name} />
 {/* <div className="info">  */}
 <p className="info">Temperaments: {props.temperament}</p>
-<p className="info">weight kgs: {peso(props.weight)}</p>  
+<p className="info">weight imperial: {props.weight}</p>  
 {/* <p className="info">weight metric: {props.weight2}</p> */}
 {/* </div> */}
      </div>

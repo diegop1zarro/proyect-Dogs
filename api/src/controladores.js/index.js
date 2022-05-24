@@ -1,7 +1,7 @@
 const { Dog, Temperament } = require('../db.js');
 const axios = require('axios')
 const {YOUR_API_KEY} = process.env
-const {altura} = require ('./convertidores.js')
+
 async function getDogsApi(){
     const info = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key${YOUR_API_KEY}`)
     const data = await info.data.map(e =>{
@@ -13,7 +13,7 @@ async function getDogsApi(){
             life_span: e.life_span,
             // weight:peso(e.weight.imperial),
             weight: e.weight.imperial,
-            height: altura(e.height.metric),
+            height:e.height.metric,
             // height2:e.height.metric,
             origin: e.origin
         }

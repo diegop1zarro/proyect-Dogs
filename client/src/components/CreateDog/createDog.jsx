@@ -15,9 +15,9 @@ import {getAllTemperaments , createDog} from '../../Redux/Actions/actions.js'
     errors.weight = 'weight is invalid';
   }else if(!/[0-9-]+$/.test(input.height)){   // cualquier numero y guiones
     errors.height = 'height is invalid'
-  }else if (/^[A-Za-z0-9\s]+$/g.test(input.life_span)){  // que contenga numeros y letras
+  }else if (!input.life_span){  // que contenga numeros y letras /^[A-Za-z0-9\s]+$/g.test(
     errors.life_span = 'life_span is required'
-  }else if(!input.temperament){
+  }else if(input.temperament.length === 0){
       errors.temperament = 'debe seleccionar al menos un temperamento'
   }
   return errors;
@@ -35,23 +35,31 @@ export default function  CreateDog() {
     temperament: []
   });
   const [errors, setErrors] = useState({});
-
+console.log(errors)
   const handleInputChange = function(e) {
+      e.preventDefault()
       setInput({
           ...input,
           [e.target.name]: e.target.value
         });
         setErrors(validate({
-            ...errors,
+            ...input,
             [e.target.name]: e.target.value
         }));
     }
     function handleSelect(e){
+        e.preventDefault()
         setInput({
             ...input,
             temperament: [...input.temperament, e.target.value]
             // temperament: e.target.value
         })
+        setErrors(validate({
+            ...input,
+            // [e.target.name]: e.target.value
+            temperament: [...input.temperament, e.target.value]
+
+        }));
     }
     useEffect(()=>{
         dispatch(getAllTemperaments())
@@ -97,34 +105,34 @@ placeholder='coloque años de vida ' onChange={(e)=>handleInputChange(e)} />
 {errors.life_span && (<p>{errors.life_span}</p>)}
 </div>
 <div>
-<label>weight: </label>
+<label>Weight: </label>
 <input type='text' value={input.weight} name='weight' 
 placeholder='coloque su peso' onChange={(e)=>handleInputChange(e)}/>
 {errors.weight && (<p>{errors.weight}</p>)}
 </div>
 <div>
-<label>height: </label>
+<label>Height: </label>
 <input type='text' value={input.height} name='height' 
 placeholder='coloque su altura' onChange={(e)=>handleInputChange(e)} />
 {errors.height && (<p>{errors.height}</p>)}
 </div><div>
-<label>image: </label>
+<label>Image: </label>
 <input type='url' value={input.image} name='image' 
 placeholder='url de una imagen' onChange={(e)=>handleInputChange(e)} />
 </div>
-
+<label>Temperament: </label>
 <select onChange={(e)=> handleSelect(e)}>
-    {Alltemperaments.map(Eltemperamento => (
-        <option key={Eltemperamento.id} value={Eltemperamento.name}>{Eltemperamento.name}</option>
+    {Alltemperaments.map((Eltemperamento, i ) => (
+        <option key={i} value={Eltemperamento.name}>{Eltemperamento.name}</option>
     ))}
 </select>
     {errors.temperament && <p>{errors.temperament}</p>}
 <button type='submit' >Create Breed</button>
     </form>
 {input.temperament?.map(temperamento=>
-    <div key={temperamento.id}>
-       <p key={temperamento.id}>{temperamento}</p> 
-<button key={temperamento.id} onClick={()=> handleDelete(temperamento)}>x</button>
+    <div key={temperamento}>
+       <p>{temperamento}</p> 
+<button onClick={()=> handleDelete(temperamento)}>x</button>
     </div>
 )}
 

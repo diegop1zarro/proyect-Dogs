@@ -61,7 +61,7 @@ const handleSortAlf=(e)=>{
   const handleSelect=(e)=>{
   setTemperament({
     ...temperament ,
-    option: [...temperament.option, e.target.value]
+    option: [e.target.value]
   })
   }
   const filterTemperament = (e)=>{
@@ -87,40 +87,40 @@ const handleDelete=(temperamento)=>{
       <div>
        <NavBar/>
        <Search/>
-      <NavLink className='crear' to='/dog'>Crear tu Raza</NavLink>   
-       <button onClick={(e)=> handleRefresh(e)}> Refrescar página</button>
+      <NavLink className='crear' to='/dog'>Created your breed</NavLink>   
+       <button onClick={(e)=> handleRefresh(e)}> Refresh page</button>
        
        <div>
-       <h3>Opciones para ordenar:</h3> 
+       <h3>Options to order...</h3> 
 <div className='filtros'>
 
   <div>
-             <p  className='titulitos'>Alfabeticamente</p>
+             <p  className='titulitos'>Alphabetically</p>
 <select onChange={(e)=> handleSortAlf(e)}>
-    <option value ='Asc' >Ascendentes</option>
-    <option value='Desc' >Descendentes</option>
+    <option value ='Asc' >A - Z</option>
+    <option value='Desc' >Z - A</option>
 </select>
   </div>
 
 <div>
-            <p className='titulitos'> Por peso</p>
+            <p className='titulitos'> By weight</p>
 <select onChange={(e)=> handleOrdenPeso(e)}>
-   <option value='Asc'>Ascendente</option>
-  <option value='Desc'>Descendente</option>
+   <option value='Asc'> - to +</option>
+  <option value='Desc'>+ to -</option>
 </select>
 </div>
 
 <div>
-         <p className='titulitos'>Por temperamentos</p>
+         <p className='titulitos'>by Temperament</p>
 <select onChange={(e)=> handleSelect(e)}>
-{Alltemperaments.map(Eltemperamento => (
-  <option  value={Eltemperamento.name}>{Eltemperamento.name}</option>
+{Alltemperaments.map((Eltemperamento, i )=> (
+  <option key={i}  value={Eltemperamento.name}>{Eltemperamento.name}</option>
   ))}
   
 </select>
-<button onClick={(e)=> filterTemperament(e)}>filtrar con temp</button>
+<button onClick={(e)=> filterTemperament(e)}>Filter</button>
 {temperament.option?.map(temperamento=>
-    <div >
+    <div key={temperamento} >
        <p >{temperamento}</p> 
 <button  onClick={()=> handleDelete(temperamento)}>x</button>
     </div>
@@ -128,11 +128,11 @@ const handleDelete=(temperamento)=>{
 </div>
 
 <div>
-   <p className='titulitos'>eleccion de perros</p>
+   <p className='titulitos'>Choice of dogs</p>
 <select onClick={(e)=> handleDB(e)}>
-  <option value='Todos'>Todos</option>
-  <option value='existentes'>existentes</option>
-  <option value='InDataBase'>Creados por mi</option>
+  <option value='Todos'>All the dogs</option>
+  <option value='existentes'>Existings</option>
+  <option value='InDataBase'>Created by me</option>
 </select>
 </div>
 
@@ -157,14 +157,14 @@ const handleDelete=(temperamento)=>{
             weight={dog.weight}
             /> </div> ) })}
 
-
-           
-         
     </div>
         )
 }
 export default Home
         
+
+           
+         
           
 
        

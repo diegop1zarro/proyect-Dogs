@@ -54,7 +54,8 @@ export function getByName(name){
       }))
 
     } catch(error){
-         console.log(error)
+       alert ('his dog not exist')
+       throw (error)
     } 
     
     };

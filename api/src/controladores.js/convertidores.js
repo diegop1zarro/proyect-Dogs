@@ -47,16 +47,16 @@
 //     let segunda= libraskg(primera)
 //     return segunda
 // }
-function altura(coso){
-    let array = coso.split('-')
-    let number = array.map(e=>Number(e))
-    let promedio = 0
-    for(let i = 0 ; i<number.length -1 ; i++){
-        let resultado1 = number[i] 
-        let resultado2 =  number[i+1] 
-        promedio = `${resultado1} cm a  ${resultado2} cm` } return promedio} 
+// function altura(coso){
+//     let array = coso.split('-')
+//     let number = array.map(e=>Number(e))
+//     let promedio = 0
+//     for(let i = 0 ; i<number.length -1 ; i++){
+//         let resultado1 = number[i] 
+//         let resultado2 =  number[i+1] 
+//         promedio = `${resultado1} cm a  ${resultado2} cm` } return promedio} 
 
-module.exports = {
+// module.exports = {
 
-   altura
-}
+//    altura
+// }

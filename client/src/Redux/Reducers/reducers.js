@@ -18,9 +18,10 @@ const initialState = {
             Alldogs: action.payload
           }
       case GET_ALL_TEMPERAMENTS:
+               const allTemperaments = action.payload.filter(e=> e.name !== '')
         return{
           ...state,
-             Alltemperaments: action.payload
+             Alltemperaments: allTemperaments
         }
         case GET_ALL_DETAILS:
           return{
@@ -35,15 +36,15 @@ const initialState = {
           case FILTER_ALFABETICAMENTE:
             let ordenado = action.payload === 'Asc' ? 
              
-             state.dogs.sort((a, b) => {
-                 if (a.name > b.name) return 1
-                 if (a.name < b.name) return -1
+             state.Alldogs.sort((a, b) => {
+                 if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
+                 if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
                  return 0
                })
              :
-              state.dogs.sort((a, b) => {
-                if (a.name > b.name) return -1
-                if (a.name < b.name) return 1
+              state.Alldogs.sort((a, b) => {
+                if (a.name.toLowerCase() > b.name.toLowerCase()) return -1
+                if (a.name.toLowerCase() < b.name.toLowerCase()) return 1
                 return 0
               })
           return{
@@ -53,13 +54,13 @@ const initialState = {
           case FILTER_POR_PESO:
             let enOrden = action.payload === 'Asc' ? 
              
-             state.dogs.sort((a, b) => {
+             state.Alldogs.sort((a, b) => {
                  if (promediamos(a.weight) > promediamos(b.weight)) return 1
                  if (promediamos(a.weight) < promediamos(b.weight)) return -1
                  return 0
                })
              :
-              state.dogs.sort((a, b) => {
+              state.Alldogs.sort((a, b) => {
                 if (promediamos(a.weight) > promediamos(b.weight)) return -1
                 if (promediamos(a.weight)< promediamos(b.weight)) return 1
                 return 0
@@ -73,12 +74,12 @@ const initialState = {
             let dogsFilter = action.payload === 'InDataBase' ? state.Alldogs.filter(e=> e.InDataBase) :  state.Alldogs.filter(e=> !e.InDataBase) 
             return{
               ...state,
-              dogs: action.payload === 'Todos'? state.dogs : dogsFilter
+              dogs: action.payload === 'Todos'? state.Alldogs : dogsFilter
             }
             case FILTER_BY_TEMPERAMENT:
               let Elaction = action.payload
-              let temperamentFilter = state.Alldogs.filter((e)=> e.InDataBase ? e.temperaments.name?.includes(Elaction) : e.temperament?.includes(Elaction)) 
-
+              let temperamentFilter = state.Alldogs.filter((e)=> e.InDataBase ? e.temperaments?.filter(H => H.name?.includes(Elaction))[0] : e.temperament?.includes(Elaction)) 
+              //  let temperamentFilter = state.Alldogs.filter(e=>e.temperament?.split(',').filter(e=>e.includes(Elaction)))
             return{
               ...state,
               dogs: temperamentFilter

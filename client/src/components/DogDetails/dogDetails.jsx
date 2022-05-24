@@ -22,7 +22,7 @@ useEffect(()=>{
         <p className='info'>Temperaments:  {dogsDetails.temperament? dogsDetails.temperament : dogsDetails.InDataBase? dogsDetails.temperaments.map(e => e.name + (' , ')) : 'no tiene'}</p>
         <p className='info'>Life span:  {dogsDetails.life_span}</p>
         <p className='info'>height: {dogsDetails.height}</p> 
-        <p className='info'>weight:  {dogsDetails.weight}</p> 
+        <p className='info'>weight imperial:  {dogsDetails.weight}</p> 
         
     </div>
     {/* <p className='info'>height metric:  {dogsDetails.height}</p> */}
