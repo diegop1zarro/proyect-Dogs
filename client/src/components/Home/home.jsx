@@ -48,7 +48,8 @@ const handleSortAlf=(e)=>{
   e.preventDefault()
   dispatch(filterByOrder(e.target.value))
   setPageActual(1)
-  setOrden(e.target.value)}
+  setOrden(e.target.value)
+}
 
   const handleOrdenPeso=(e)=>{
   e.preventDefault()
@@ -97,7 +98,8 @@ const handleDelete=(temperamento)=>{
   <div>
              <p  className='titulitos'>Alphabetically</p>
 <select onChange={(e)=> handleSortAlf(e)}>
-    <option value ='Asc' >A - Z</option>
+     <option >options</option>
+    <option value='Asc' >A - Z</option>
     <option value='Desc' >Z - A</option>
 </select>
   </div>
@@ -105,10 +107,12 @@ const handleDelete=(temperamento)=>{
 <div>
             <p className='titulitos'> By weight</p>
 <select onChange={(e)=> handleOrdenPeso(e)}>
+    <option >options</option>
    <option value='Asc'> - to +</option>
   <option value='Desc'>+ to -</option>
 </select>
 </div>
+
 
 <div>
          <p className='titulitos'>by Temperament</p>
@@ -153,7 +157,7 @@ const handleDelete=(temperamento)=>{
              name= {dog.name}
              image= {dog.image}
              id={dog.id}
-             temperament={dog.temperament? dog.temperament : dog.InDataBase? dog.temperaments.map(e => e.name + (' , ')) : 'no tiene'}
+             temperament={dog.temperament? dog.temperament : dog.InDataBase? dog.temperaments.map(e => e.name + (' , ')) : 'No temperaments found'}
             weight={dog.weight}
             /> </div> ) })}
 

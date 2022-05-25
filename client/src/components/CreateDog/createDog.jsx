@@ -2,7 +2,7 @@ import React, { useState , useEffect } from 'react';
 import { useSelector , useDispatch } from 'react-redux';
 import NavBar from '../NavBar/navBar.jsx'
 import {getAllTemperaments , createDog} from '../../Redux/Actions/actions.js'
-
+import '../../Style/CreateDog.css'
 // import validate from './validate.jsx'
 
 
@@ -10,15 +10,15 @@ import {getAllTemperaments , createDog} from '../../Redux/Actions/actions.js'
  function validate (input) {
   let errors = {};
   if (!/[A-Z]/.test(input.name)) {       // la primera letra en mayusculas
-    errors.name = ' debe colocar la primera letra en mayusculas';
+    errors.name = 'You must put a name with its first letter in capital letters';
   } else if (!/[0-9-]+$/.test(input.weight)) {
-    errors.weight = 'weight is invalid';
+    errors.weight = 'Place minimum and maximum weight separated with a hyphen';
   }else if(!/[0-9-]+$/.test(input.height)){   // cualquier numero y guiones
-    errors.height = 'height is invalid'
+    errors.height = 'Place minimum and maximum height separated with a hyphen'
   }else if (!input.life_span){  // que contenga numeros y letras /^[A-Za-z0-9\s]+$/g.test(
     errors.life_span = 'life_span is required'
   }else if(input.temperament.length === 0){
-      errors.temperament = 'debe seleccionar al menos un temperamento'
+      errors.temperament = 'You must select one or more temperaments'
   }
   return errors;
 };
@@ -68,18 +68,24 @@ console.log(errors)
     
     const handleSubmit = (e) => {
         e.preventDefault();
-          dispatch(createDog(input))
-        console.log(input)
-        alert('breed creada')
-        setInput({
-            name: '',
-            weight: '',
-            height:'',
-            image:'',
-            life_span:'',
-            temperament:[]
-        })
-        setErrors({})
+        const errorSave = validate(input)
+        if(Object.values(errorSave).length !== 0){
+            alert('completar todos los campos requeridos')
+        }else{
+            dispatch(createDog(input))
+          console.log(input)
+          alert('breed creada')
+          setInput({
+              name: '',
+              weight: '',
+              height:'',
+              image:'',
+              life_span:'',
+              temperament:[]
+          })
+          setErrors({})
+
+        }
 }
 function handleDelete(temperamento){
     setInput({
@@ -89,45 +95,47 @@ function handleDelete(temperamento){
 }
   
 return (
-<div>
+<div >
     <NavBar/>
-<form onSubmit={(e)=> handleSubmit(e)}>
+
+<form  onSubmit={(e)=> handleSubmit(e)}>
+    <p className='mensaje'>Data marked with an asterisk (*) are required </p>
 <div>
-<label>Name: </label>  
-<input type='text' value={input.name} name='name' 
-placeholder='coloque un nombre' onChange={(e)=>handleInputChange(e)} />
-{errors.name && (<p>{errors.name}</p>)}
+<label className='label'>Name *: </label>  
+<input className='inputs' type='text' value={input.name} name='name' 
+placeholder='Breed Name' onChange={(e)=>handleInputChange(e)} />
+{errors.name && (<p className='error'>{errors.name}</p>)}
 </div>
 <div>
-<label>Life_span: </label>
-<input type='text' value={input.life_span} name='life_span' 
-placeholder='coloque años de vida ' onChange={(e)=>handleInputChange(e)} />
-{errors.life_span && (<p>{errors.life_span}</p>)}
+<label className='label'>Life_span: </label>
+<input className='inputs' type='text' value={input.life_span} name='life_span' 
+placeholder='example : 10 years' onChange={(e)=>handleInputChange(e)} />
+{errors.life_span && (<p className='error'>{errors.life_span}</p>)}
 </div>
 <div>
-<label>Weight: </label>
-<input type='text' value={input.weight} name='weight' 
-placeholder='coloque su peso' onChange={(e)=>handleInputChange(e)}/>
-{errors.weight && (<p>{errors.weight}</p>)}
+<label className='label'>Weight Imperial *: </label>
+<input className='inputs' type='text' value={input.weight} name='weight' 
+placeholder='example: 12-13' onChange={(e)=>handleInputChange(e)}/>
+{errors.weight && (<p className='error'>{errors.weight}</p>)}
 </div>
 <div>
-<label>Height: </label>
-<input type='text' value={input.height} name='height' 
-placeholder='coloque su altura' onChange={(e)=>handleInputChange(e)} />
-{errors.height && (<p>{errors.height}</p>)}
+<label className='label'>Height Metric *: </label>
+<input className='inputs' type='text' value={input.height} name='height' 
+placeholder='example: 20-24' onChange={(e)=>handleInputChange(e)} />
+{errors.height && (<p className='error'>{errors.height}</p>)}
 </div><div>
-<label>Image: </label>
-<input type='url' value={input.image} name='image' 
-placeholder='url de una imagen' onChange={(e)=>handleInputChange(e)} />
+<label className='label'>Image: </label>
+<input className='inputs' type='url' value={input.image} name='image' 
+placeholder='url image' onChange={(e)=>handleInputChange(e)} />
 </div>
-<label>Temperament: </label>
+<label className='label'>Temperament *: </label>
 <select onChange={(e)=> handleSelect(e)}>
     {Alltemperaments.map((Eltemperamento, i ) => (
         <option key={i} value={Eltemperamento.name}>{Eltemperamento.name}</option>
     ))}
 </select>
-    {errors.temperament && <p>{errors.temperament}</p>}
-<button type='submit' >Create Breed</button>
+    {errors.temperament && <p className='error'>{errors.temperament}</p>}
+<button type='submit'  >Create Breed</button>
     </form>
 {input.temperament?.map(temperamento=>
     <div key={temperamento}>

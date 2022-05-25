@@ -69,6 +69,7 @@ async function getDogsDB(){
 
     module.exports ={
         getAllData,
-        
         getAllTemperaments,
+        getDogsDB
+        
     }

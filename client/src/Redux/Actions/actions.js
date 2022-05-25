@@ -65,9 +65,19 @@ export function createDog(dog){
   const post = await axios.post('http://localhost:3001/dog',dog)
   return post
     }
-    
-    };
+    // return function(){
+    //   fetch('http://localhost:3001/dog',{
+    //     method: 'POST',
+    //     body:  JSON.stringify(dog) 
+    //   })
+      
+     
+            
+      
+    // }
+};
 export function filterByOrder(orden){
+  console.log(orden)
   return{
     type:FILTER_ALFABETICAMENTE,
     payload:orden

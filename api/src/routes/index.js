@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { Dog, Temperament } = require('../db.js');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-const {getAllData ,  getAllTemperaments } = require ('../controladores.js')
+const {getAllData ,  getAllTemperaments , getDogsDB } = require ('../controladores.js')
 
 
 
@@ -81,6 +81,16 @@ try {
     }
 })
 
+// router.delete('/delete/:dogid', async(req,res)=>{
+//    await Dog.destroy({
+//         where:{
+//             id: req.params.id
+//         }
+//     }).then(e=>{
+//         res.send(e)
+//     })
+    
+// })
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);

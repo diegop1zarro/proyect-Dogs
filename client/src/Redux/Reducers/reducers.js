@@ -34,37 +34,41 @@ const initialState = {
             dogs:action.payload
           }
           case FILTER_ALFABETICAMENTE:
-            let ordenado = action.payload === 'Asc' ? 
-             
-             state.Alldogs.sort((a, b) => {
+            let ordenado = action.payload === 'Asc' ? state.dogs.sort((a, b) => {
                  if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
                  if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
                  return 0
                })
-             :
-              state.Alldogs.sort((a, b) => {
+             : action.payload === 'Desc'?
+              state.dogs.sort((a, b) => {
                 if (a.name.toLowerCase() > b.name.toLowerCase()) return -1
                 if (a.name.toLowerCase() < b.name.toLowerCase()) return 1
                 return 0
-              })
+              }) : state.Alldogs
+            // let ordenado = action.payload === "Asc"
+            // ? state.dogs.sort((a, b) => {
+            //     return a.name.localeCompare(b.name);
+            //   })
+            // : state.dogs.sort((a, b) => {
+            //     return b.name.localeCompare(a.name);
+            //   });
+            //   console.log(ordenado)
           return{
             ...state,
             dogs:ordenado
           }
           case FILTER_POR_PESO:
-            let enOrden = action.payload === 'Asc' ? 
-             
-             state.Alldogs.sort((a, b) => {
+            let enOrden = action.payload === 'Asc' ? state.dogs.sort((a, b) => {
                  if (promediamos(a.weight) > promediamos(b.weight)) return 1
                  if (promediamos(a.weight) < promediamos(b.weight)) return -1
                  return 0
                })
-             :
-              state.Alldogs.sort((a, b) => {
+             : action.payload === 'Desc'? 
+              state.dogs.sort((a, b) => {
                 if (promediamos(a.weight) > promediamos(b.weight)) return -1
                 if (promediamos(a.weight)< promediamos(b.weight)) return 1
                 return 0
-              })
+              }) : state.Alldogs
           return{
             ...state,
             dogs:enOrden
@@ -78,7 +82,7 @@ const initialState = {
             }
             case FILTER_BY_TEMPERAMENT:
               let Elaction = action.payload
-              let temperamentFilter = state.Alldogs.filter((e)=> e.InDataBase ? e.temperaments?.filter(H => H.name?.includes(Elaction))[0] : e.temperament?.includes(Elaction)) 
+              let temperamentFilter = state.dogs.filter((e)=> e.InDataBase ? e.temperaments?.filter(H => H.name?.includes(Elaction))[0] : e.temperament?.includes(Elaction)) 
               //  let temperamentFilter = state.Alldogs.filter(e=>e.temperament?.split(',').filter(e=>e.includes(Elaction)))
             return{
               ...state,

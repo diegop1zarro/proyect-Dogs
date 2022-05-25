@@ -1,4 +1,9 @@
 .botom{
     color: white;
     background-color: #ad331d;
+    font-size: 20px;
+    transition: 2s;
+}
+.botom :hover{
+    background-color: #ad331db7;
 }
