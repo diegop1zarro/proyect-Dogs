@@ -4,9 +4,9 @@ import '../../Style/Landing.css'
 export default function Landing (){
     return(
         <div>
-            <h1 className='bienvenido'>Bienvenido a mi página de Dogs</h1>
+            <h1 className='bienvenido'>welcome to my page of Dogs</h1>
             <Link to='/home'>
-            <button className='botom'> Ingresar </button>
+            <button className='botom'> Get in </button>
             </Link>
         </div>
     )
