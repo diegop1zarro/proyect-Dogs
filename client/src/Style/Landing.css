@@ -1,9 +1,16 @@
 .botom{
-    color: white;
-    background-color: #ad331d;
-    font-size: 20px;
-    transition: 2s;
+    /* color: white; */
+    color: #FFCB74;
+    /* background-color: #ad331d; */
+    background-color: #2F2F2F;
+    font-size: 30px;
+    transition: 0,5s;
 }
-.botom :hover{
-    background-color: #ad331db7;
+.botom:hover{
+    /* background-color: #912020b7; */
+    background-color: #2f2f2faf;
+
+}
+.bienvenido{
+    color: #FFCB74;
 }

@@ -8,16 +8,26 @@ export default function DogCard (props){
  return(
 
      <div className="container">
- {/* <button onClick={()=> props.deleteProduct(props.id)}>x</button> */}
+ 
 <NavLink className="title" to={`/dogs/${props.id}`}>
 <h3 >{props.name}</h3>
 </NavLink>
 <img className="img" src={props.image} alt={props.name} />
-{/* <div className="info">  */}
-<p className="info">Temperaments: {props.temperament}</p>
-<p className="info">weight imperial: {props.weight}</p>  
-{/* <p className="info">weight metric: {props.weight2}</p> */}
-{/* </div> */}
+<div className="infoCard">
+<h4>Temperaments: </h4>
+<p>{props.temperament}</p>
+</div>
+<div className="infosCard">
+<h4>weight imperial: </h4>
+<p>{props.weight}</p>  
+</div>
+<div className="infosCard">
+<h4>Dog :</h4>
+<p>{props.CreadoPorDiego}</p>
+</div>
+
      </div>
+
+
  )
 }

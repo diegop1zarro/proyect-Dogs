@@ -10,15 +10,109 @@
     justify-content: space-evenly;
     align-items: flex-start;
 }
+
 .titulitos{
+    color: wheat;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     font-size: 20px;
+    height: 3px;
+    margin-top: 0px ; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.crear{
-    font-size: 30px;
-    color: white;
-    background-color: #ad331d;
+select{
+    color: rgb(134, 117, 70);
+    background-color: #0c0c0ca1;
+    border-radius: 6px;
+    border-color: rgb(134, 117, 70);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+ }
+ option{
+    background-color: rgb(14, 13, 13);
+    color: rgb(134, 117, 70);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+ }
+ .botonFilter{
+    background-color: #323233a1;
+    color: rgb(134, 117, 70);
+    border-radius: 6px;
+    border-color: rgb(134, 117, 70);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+ }
+.botonesHome{
+    font-size: 20px;
+    color: wheat;
+    /* background-color: #ad331d; */
+    background-color: #2F2F2F;
     justify-content: left;
+}
+.botonesHome:hover{
+    background-color:#2f2f2faf;
+}
+.loading{
+    font-size: 30px;
+    
+}
+.h3{
+    color: beige;
+}
+.CreateRefresh{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.ContainerCards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1rem;
+    gap: 1rem;
+    place-items: center;
+    place-content: center;
+    justify-content: space-evenly;
+    align-items: start;
+}
+@media screen and (max-width:900px) {
+    .ContainerCards{
+       grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (max-width:760px) {
+    .ContainerCards{
+       grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:450px) {
+    .ContainerCards{
+       grid-template-columns: repeat(1,1fr);
+       margin-left: 4px;
+    }
+    .titulitos{
+        font-size: 10px;
+        height: 3px;
+        margin-top: 0px ; 
+    }
+    select{
+       font-size: 7px;     
+     }
+     option{
+       font-size: 10px;
+     
+     }
+     .botonFilter{
+        font-size: 7px;
+     }
+     .botonesHome{
+        font-size: 10px;
+     }
+    .CreateRefresh{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
 }

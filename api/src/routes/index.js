@@ -11,23 +11,20 @@ const router = Router();
 router.get('/dogs', async (req,res)=>{
     const name = req.query.name
     let AllBreeds = await getAllData()
-    const error = {error : 'no se ha encontrado una raza con ese nombre'}
 if(name){
         // se filtran tanto los perros que tengo en la api como en la base de datos
         let breeds = await AllBreeds.filter(e=> e.name.toLowerCase().includes(name.toLowerCase())) 
         if(breeds.length){
             res.status(200).send(breeds)
         }else{
-            // res.status(400).send(error)
-            res.status(404).send('no found')
+            res.status(200).send({error : 'error'})
         }
+           
 }else{res.status(200).send(AllBreeds)  }
 })
 
 router.get('/dogs/:id',async (req,res)=>{
 const id = req.params.id
-const error = {error :'No se ha encontrado detalles para esa raza'}
-const errorId = {error : 'Debe colocar un Id válido '}
 let AllRaza = await getAllData()
 if(id){
        let ById = await AllRaza.filter(e => e.id == id)
@@ -41,7 +38,6 @@ if(id){
 })
 router.get('/temperament',async (req,res)=>{
 let data = await getAllTemperaments()
-const error = {error : 'No se han encontrado los temperamentos'}
 if(data){
     for(let i = 0 ; i< data.length ; i++){   // le coloco un for para pasarle la informacion en orden
         await Temperament.findOrCreate({
@@ -57,7 +53,7 @@ res.status(400).send(error)
 }
 })
 router.post('/dog', async (req,res)=>{
-    let {name ,height, weight, life_span, image , temperament, InDataBase} = req.body
+    let {name ,height, weight, life_span, image , temperament, InDataBase , Creado_por_Diego} = req.body
     const msj ={hecho:'La raza ha sido creada correctamente'}
     // const error ={error :'Se produjo un error al crear su Raza'}
 try {
@@ -67,7 +63,8 @@ try {
                 weight,
                 life_span,
                 image,
-                InDataBase
+                InDataBase,
+                Creado_por_Diego
                 })
     let otro = await Temperament.findAll({
                     where: {name : temperament},
@@ -81,16 +78,18 @@ try {
     }
 })
 
-// router.delete('/delete/:dogid', async(req,res)=>{
-//    await Dog.destroy({
-//         where:{
-//             id: req.params.id
-//         }
-//     }).then(e=>{
-//         res.send(e)
-//     })
-    
-// })
+router.delete('/delete/:id', async(req,res)=>{
+    try {
+      
+        await Dog.destroy({
+            where:{id : req.params.id},
+           
+        })
+        res.status(200).send('eliminado')
+    } catch (error) {
+        res.status(404).send(error)
+    }
+})
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);

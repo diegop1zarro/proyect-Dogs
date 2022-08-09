@@ -1,24 +1,47 @@
-/* /* .inputs{
+.labelCreate{
     color: white;
-    background-color:#ffa9587c; 
     font-size: 20px;
-border-color: rgba(252, 252, 252, 0.37);
+}
+.inputsCreate{
+    background-color: #2f2f2fa4;
+    color: white;    
+}
+.contenedorCreate{
+    background-color: #2f2f2fa4;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 600px;
+    height: auto;
+}
+.contenedorMenor{
+    display: flex;
+margin-top: 30px;    
+align-content: flex-start;
+    align-items: center;
+}
+.botonCreate{
+    background-color: #141414a1;
+    color: rgb(134, 117, 70);
+    border-radius: 6px;
+    border-color: rgb(134, 117, 70);
+ padding: 5px;
+ font-size: 15px;
+}
 
-} */
-/* .label{
+.botonDelete{
+    background-color: #610303a1;
     color: white;
-    font-size: 25px;
+    border-radius: 6px;
+    border-color: #610303a1;
+ padding: 5px;
+ font-size: 10px;
+ margin-left: 5px;
 }
-.contenedor{
-    background-color: #8129299d;
-    width: 300px;
-    flex-direction: column;
-    
-} */
-.error{
-    color: red;
-    font-size: 20px;
+.inputsPYG{
+    display: flex;
+    align-items: center;
+    background-color:#2f2f2fa4 ;
 }
-.mensaje{
-    font-size: 20px;
-} 
+.errorCreate{
+color: red;
+}

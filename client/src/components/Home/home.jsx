@@ -1,48 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react' ;
 import { useDispatch , useSelector} from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { getAllDogs , filterByOrder , getAllTemperaments , filterDB , filterByTemperament,filterByOrderPeso} from '../../Redux/Actions/actions.js'
-import DogCard from '../DogCard/dogCard'
-import "../../Style/paginate.css";
-import '../../Style/DogCard.css'
-import '../../Style/Home.css'
+import { Link } from 'react-router-dom';
+import { getAllDogs , filterByOrder , getAllTemperaments , filterDB , filterByTemperament,filterByOrderPeso , limpiarEstadoHome} from '../../Redux/Actions/actions.js' ;
+import DogCard from '../DogCard/dogCard' ;
 import NavBar from '../NavBar/navBar.jsx';
-import Search from '../Search/search.jsx'
-// import ReactPaginate from "react-paginate";
-// import dogjson from '../../dogss.json'
-// import Filters from '../Filters/Filters.jsx';
+import Search from '../Search/search.jsx';
 import Paginate from '../Paginate/pagination.jsx';
+import Loading from '../Loading/Loading.jsx';
+import Footbar from '../Footbar/footbar.jsx';
+import "../../Style/paginate.css";
+import '../../Style/DogCard.css' ;
+import '../../Style/Home.css';
 function Home (){
   const dispatch = useDispatch()
   const dogs = useSelector((state)=> state.dogs)
   const Alltemperaments = useSelector((state)=> state.Alltemperaments)
- const [orden , setOrden]= useState()
- const [temperament , setTemperament] = useState({
-   option: []
+  const [orden , setOrden]= useState()
+  const [temperament , setTemperament] = useState({
+    option: []
   })
+  useEffect(()=>{
+    dispatch(getAllDogs())
+    dispatch(getAllTemperaments())
+    
+  },[dispatch])
   
 //Paginado
 const [paginaActual , setPageActual] = useState(1)
-const [dogsPorPage , setDogsPorPage] = useState(8)
+const [dogsPorPage ] = useState(8)
 const ultimoDogPorPage = paginaActual * dogsPorPage
 const primerDogPorPage = ultimoDogPorPage - dogsPorPage
-const DogsActuales = dogs.slice(primerDogPorPage ,ultimoDogPorPage)
+const DogsActuales = dogs.error ? 0 : dogs.slice(primerDogPorPage ,ultimoDogPorPage) 
 const paginado = (nroDePagina)=>{
   setPageActual(nroDePagina)
 }
+const prevPage = () => {
+  setPageActual( paginaActual - 1 );
+ }
+ const NextPage = () => {
+  setPageActual( paginaActual +1);
+ } 
 
-
-
-
-
-useEffect(()=>{
-  dispatch(getAllDogs())
-  dispatch(getAllTemperaments())
-},[dispatch])
 
 const handleRefresh=(e)=> {
   e.preventDefault();
+  dispatch(limpiarEstadoHome())
   dispatch(getAllDogs())
+  
 };
 const handleSortAlf=(e)=>{
   e.preventDefault()
@@ -60,56 +64,58 @@ const handleSortAlf=(e)=>{
 }  
   
   const handleSelect=(e)=>{
-  setTemperament({
+   setTemperament({
     ...temperament ,
     option: [e.target.value]
   })
+  
   }
+
   const filterTemperament = (e)=>{
     e.preventDefault()
   dispatch(filterByTemperament(temperament.option))
+  setPageActual(1)
     setTemperament({
+      ...temperament,
       option: []
       })
     }
-    console.log(temperament.option)
-const handleDelete=(temperamento)=>{
-      setTemperament({
-          ...temperament,
-          option: temperament.option.filter(e => e !== temperamento)
-      })
-  }
 
  const handleDB = (e)=>{
   dispatch(filterDB(e.target.value))
 }   
+
   
     return (
       <div>
        <NavBar/>
+      
+      <div className='CreateRefresh'>
        <Search/>
-      <NavLink className='crear' to='/dog'>Created your breed</NavLink>   
-       <button onClick={(e)=> handleRefresh(e)}> Refresh page</button>
-       
-       <div>
-       <h3>Options to order...</h3> 
+         <Link to='/dog'>
+      <button className='botonesHome' >Created your breed</button>   
+         </Link>
+       <button className='botonesHome' onClick={(e)=> handleRefresh(e)}> Refresh page</button>
+      </div>
+     <div>
+       <h3 className='h3'>Options to order...</h3> 
 <div className='filtros'>
 
   <div>
              <p  className='titulitos'>Alphabetically</p>
 <select onChange={(e)=> handleSortAlf(e)}>
-     <option >options</option>
-    <option value='Asc' >A - Z</option>
-    <option value='Desc' >Z - A</option>
+<option defaultValue='' disabled selected>Selecciona una opción</option>
+    <option value='A_Z' >A - Z</option>
+    <option value='Z_A' >Z - A</option>
 </select>
   </div>
 
 <div>
             <p className='titulitos'> By weight</p>
 <select onChange={(e)=> handleOrdenPeso(e)}>
-    <option >options</option>
-   <option value='Asc'> - to +</option>
-  <option value='Desc'>+ to -</option>
+<option defaultValue='' disabled selected>Selecciona una opción</option>
+   <option value='Asc'> menor a mayor</option>
+  <option value='Desc'>mayor a menor</option>
 </select>
 </div>
 
@@ -117,18 +123,14 @@ const handleDelete=(temperamento)=>{
 <div>
          <p className='titulitos'>by Temperament</p>
 <select onChange={(e)=> handleSelect(e)}>
+<option defaultValue='' disabled selected>Selecciona una opción</option>
 {Alltemperaments.map((Eltemperamento, i )=> (
   <option key={i}  value={Eltemperamento.name}>{Eltemperamento.name}</option>
   ))}
   
 </select>
-<button onClick={(e)=> filterTemperament(e)}>Filter</button>
-{temperament.option?.map(temperamento=>
-    <div key={temperamento} >
-       <p >{temperamento}</p> 
-<button  onClick={()=> handleDelete(temperamento)}>x</button>
-    </div>
-)}
+<button className='botonFilter' onClick={(e)=> filterTemperament(e)}>Filter</button>
+
 </div>
 
 <div>
@@ -144,11 +146,17 @@ const handleDelete=(temperamento)=>{
 
          </div>
       <Paginate 
+       paginaActual={paginaActual}
+       prevPage = {prevPage}
+       NextPage = {NextPage}
       dogsPorPage={dogsPorPage}
       dogs={dogs.length}
       paginado= {paginado}
       />
-       { DogsActuales?.map((dog) => {
+       { dogs.error || dogs.errorDB ? <h4> no se ha encontrado el resultado</h4>:
+     <div className='ContainerCards'>
+        { DogsActuales.length > 0 ? (
+        DogsActuales?.map((dog) => {
          return (
            <div key={dog.id}>
 
@@ -159,8 +167,13 @@ const handleDelete=(temperamento)=>{
              id={dog.id}
              temperament={dog.temperament? dog.temperament : dog.InDataBase? dog.temperaments.map(e => e.name + (' , ')) : 'No temperaments found'}
             weight={dog.weight}
-            /> </div> ) })}
-
+            CreadoPorDiego={ dog.Creado_por_Diego ? dog.Creado_por_Diego: 'Existente'}
+            /> </div> 
+            ) }) ) : <Loading/>}
+       </div>
+            
+             }
+             <Footbar/>
     </div>
         )
 }

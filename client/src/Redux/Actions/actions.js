@@ -5,15 +5,20 @@ export const GET_BY_NAME="GET_BY_NAME";
 export const GET_ALL_DETAILS="GET_ALL_DETAILS";
 export const GET_ALL_TEMPERAMENTS ="GET_ALL_TEMPERAMENTS";
 export const CREATE_DOG = "CREATE_DOG";
-export const FILTER_ALFABETICAMENTE= 'FILTER_ALFABETICAMENTE';
-export const FILTER_DB = 'FILTER_DB'
-export const  FILTER_BY_TEMPERAMENT = ' FILTER_BY_TEMPERAMENT'
-export const FILTER_POR_PESO = 'FILTER_POR_PESO'
+export const FILTER_ALFABETICAMENTE= "FILTER_ALFABETICAMENTE";
+export const FILTER_DB = "FILTER_DB";
+export const  FILTER_BY_TEMPERAMENT = "FILTER_BY_TEMPERAMENT";
+export const FILTER_POR_PESO = "FILTER_POR_PESO";
+export const LIMPIAR ="LIMPIAR";
+export const LIMPIAR_HOME ="LIMPIAR_HOME";
+export const DELETE_DOG ="DELETE_DOG";
+
+
 
 export const getAllDogs = () => {
-    return async function (dispatch) {
+    return  function (dispatch) {
       
-    return await fetch('http://localhost:3001/dogs')
+    return fetch('http://localhost:3001/dogs')
     .then(info => info.json())
     .then (data => dispatch({
       type: GET_ALL_DOGS,
@@ -24,16 +29,16 @@ export const getAllDogs = () => {
   };
 
 export function getAllTemperaments(){
-  return async function (dispatch){
-    await fetch('http://localhost:3001/temperament')
+  return function (dispatch){
+     fetch('http://localhost:3001/temperament')
     .then(info => info.json())
     .then (data=>dispatch({type:GET_ALL_TEMPERAMENTS, payload: data }))
   }
 }
 export function getAllDetails (id){
-  return async function (dispatch) {
+  return  function (dispatch) {
       
-    return await fetch('http://localhost:3001/dogs/'+ id)
+    return fetch('http://localhost:3001/dogs/'+ id)
     .then(info => info.json())
     .then (data => dispatch({
       type: GET_ALL_DETAILS,
@@ -44,9 +49,9 @@ export function getAllDetails (id){
 }
 
 export function getByName(name){
-  return async function (dispatch) {
+  return function (dispatch) {
     try{
-      return await fetch('http://localhost:3001/dogs?name='+ name)
+      return  fetch('http://localhost:3001/dogs?name='+ name)
       .then(info => info.json())
       .then (data => dispatch({
         type: GET_BY_NAME,
@@ -54,8 +59,7 @@ export function getByName(name){
       }))
 
     } catch(error){
-       alert ('his dog not exist')
-       throw (error)
+      throw (error)
     } 
     
     };
@@ -65,16 +69,7 @@ export function createDog(dog){
   const post = await axios.post('http://localhost:3001/dog',dog)
   return post
     }
-    // return function(){
-    //   fetch('http://localhost:3001/dog',{
-    //     method: 'POST',
-    //     body:  JSON.stringify(dog) 
-    //   })
-      
-     
-            
-      
-    // }
+    
 };
 export function filterByOrder(orden){
   console.log(orden)
@@ -101,14 +96,24 @@ export function filterByTemperament(options){
     payload: options
   }
 }
-// export function createDog(dog){
-//   return async function () {
-//     try{
-//       return await fetch('http://localhost:3001/dog',dog)
-      
-//     } catch(error){
-//          console.log(error)
-//     } 
+export function limpiarEstado(){
+  return{
+    type:LIMPIAR
+  }
+}
+export function limpiarEstadoHome(){
+  return{
+    type:LIMPIAR_HOME,
     
-//     };
-// }
+  }
+}
+export function deleteDog(id){
+  return async function(dispatch){
+   await axios.delete('http://localhost:3001/delete/'+ id)
+    .then(()=>{
+      dispatch({
+        type:DELETE_DOG
+      })
+    })
+  }
+}

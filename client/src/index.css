@@ -6,12 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(33, 33, 41, 0.651);
-  background-image: url(https://images.vexels.com/media/users/3/224024/raw/7d5f782c118d98e81958df1cb7c5ddaa-diseno-de-patron-de-corazones-de-huellas-de-pata.jpg) ;
+  background-image: url(https://fondosmil.com/fondo/32022.jpg) ;
   height: 700px;
   background-size: cover;
   background-repeat:no-repeat;
   background-position: center center;
   background-attachment:fixed;
+  /* background-color: #111111; */
 }
 
 code {

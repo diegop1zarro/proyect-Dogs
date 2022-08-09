@@ -36,6 +36,11 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: true
     },
+    Creado_por_Diego:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue:'Created by me'
+    }
     // temperamentId:{
     //   type : DataTypes.INTEGER,
     //   allowNull: false

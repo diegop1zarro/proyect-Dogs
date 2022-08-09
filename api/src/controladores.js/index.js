@@ -18,7 +18,12 @@ async function getDogsApi(){
             origin: e.origin
         }
     })
-    return data
+    let newData = data.sort((a, b) => {
+        if (a.life_span > b.life_span) return -1
+        if (a.life_span < b.life_span) return 1
+        return 0
+      })
+    return newData
 
 }
 async function getAllTemperaments(){
@@ -54,7 +59,7 @@ async function getDogsDB(){
         const api = await getDogsApi()
         const base = await getDogsDB()
         const allData = api.concat(base)
-        return allData
+        return allData.sort()
     }
     // async function getByName (name){
     //     let AllData = await getAllData()

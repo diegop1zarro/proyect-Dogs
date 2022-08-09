@@ -1,41 +1,34 @@
-/* .otromas{
-     display: grid;
-    grid-template-columns: repeat(2); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem;
-} */
 .container{
-    /* background-color: blueviolet; */
-    margin: 0 auto;
-    width: 700px;
-    height: 750px;
-    background: #7a38247c;
+    background-color: #2f2f2fa4;
+    width: 300px;
+    height: auto;
     border-radius: 5px;
-    position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem; */
+    margin-left: 4px;
+    margin-right: 4px;
+   
 }
 
 .title{
-    color: white;
-    font-size: 30px;
+    color: #FFCB74;
+    font-size: 20px;
     text-decoration: none;
 }
 
-.img{
-    width: 600px;
-  height: 500px;
-  padding-left: 50px;
-}
-.info{
-    font-size: 20px;
+.infosCard{
     display: flex;
-    flex-direction: row;
-    flex-wrap: row;
-    color: white;
-    /* justify-content: space-around; */
+    justify-content: center;
+    align-items: baseline;
+    /* font-family: serif; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  
+  } 
+
+.img{
+    width: 100%;
+    height: 200px;
+}
+@media screen and (max-width:450px) {
+   .container{
+}
 }
