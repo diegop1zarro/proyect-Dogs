@@ -112,7 +112,8 @@ export function deleteDog(id){
    await axios.delete('http://localhost:3001/delete/'+ id)
     .then(()=>{
       dispatch({
-        type:DELETE_DOG
+        type:DELETE_DOG,
+        payload: id
       })
     })
   }

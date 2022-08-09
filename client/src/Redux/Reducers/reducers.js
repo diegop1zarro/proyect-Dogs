@@ -102,10 +102,12 @@ const initialState = {
             ...state,
            dogs:[]
           }
-        case DELETE_DOG:
-          return{
-            ...state,
-          }
+          case DELETE_DOG:
+            const deleteDog = state.dogs.filter(dog => dog.id !== action.payload)
+            return{
+              ...state,
+              dogs: deleteDog
+            }
   
       default : return state
   };
