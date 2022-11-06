@@ -5,21 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(33, 33, 41, 0.651);
-  background-image: url(https://fondosmil.com/fondo/32022.jpg) ;
+  background-color: rgb(12, 12, 12);
+  /* background-image: url(https://fondosmil.com/fondo/32022.jpg) ;
   height: 700px;
   background-size: cover;
   background-repeat:no-repeat;
   background-position: center center;
-  background-attachment:fixed;
-  /* background-color: #111111; */
+  background-attachment:fixed; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-/* https://img.freepik.com/vector-gratis/patron-perro-costuras-huellas-patas-textura-patas-gato-patron-huellas-perros-textura-perro_192280-791.jpg?w=2000 */
-/* https://previews.123rf.com/images/kilroy79/kilroy791610/kilroy79161000138/63531537-se-aceptan-las-patas-de-colores-sobre-fondo-blanco-patr%C3%B3n-transparente-.jpg */
-/* https://previews.123rf.com/images/kannaa123rf/kannaa123rf1410/kannaa123rf141000190/32781228-patr%C3%B3n-de-animal-incons%C3%BAtil-del-vector-de-la-huella-de-la-pata-la-l%C3%ADnea-y-el-punto-textura-fin-se-pu.jpg */
-/* https://images.vexels.com/media/users/3/224024/raw/7d5f782c118d98e81958df1cb7c5ddaa-diseno-de-patron-de-corazones-de-huellas-de-pata.jpg */

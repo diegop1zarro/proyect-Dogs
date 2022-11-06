@@ -7,7 +7,6 @@ import NavBar from '../NavBar/navBar.jsx';
 import Search from '../Search/search.jsx';
 import Paginate from '../Paginate/pagination.jsx';
 import Loading from '../Loading/Loading.jsx';
-import Footbar from '../Footbar/footbar.jsx';
 import "../../Style/paginate.css";
 import '../../Style/DogCard.css' ;
 import '../../Style/Home.css';
@@ -154,12 +153,13 @@ const handleSortAlf=(e)=>{
       paginado= {paginado}
       />
        { dogs.error || dogs.errorDB ? <h4> no se ha encontrado el resultado</h4>:
+       
+        DogsActuales.length > 0 ?
      <div className='ContainerCards'>
-        { DogsActuales.length > 0 ? (
-        DogsActuales?.map((dog) => {
+        
+       { DogsActuales?.map((dog) => {
          return (
            <div key={dog.id}>
-
              <DogCard  
              key={dog.id}
              name= {dog.name}
@@ -168,12 +168,15 @@ const handleSortAlf=(e)=>{
              temperament={dog.temperament? dog.temperament : dog.InDataBase? dog.temperaments.map(e => e.name + (' , ')) : 'No temperaments found'}
             weight={dog.weight}
             CreadoPorDiego={ dog.Creado_por_Diego ? dog.Creado_por_Diego: 'Existente'}
-            /> </div> 
-            ) }) ) : <Loading/>}
+            /> 
+            </div> 
+            )
+            })
+          }
        </div>
+       : <Loading/>
             
              }
-             <Footbar/>
     </div>
         )
 }
