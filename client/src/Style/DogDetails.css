@@ -4,20 +4,28 @@
     width: 800px;
     height: auto;
     position: relative;
-    margin-left: 300px;
-    
+    margin: 0 auto;
+    border-radius: 3px;
+    padding: 10px;
 }
-
 .titleDetail{
     color: #FFCB74;
     font-size: 30px;
     text-decoration: none;
 }
-
+.containerImgDetail{
+  margin: 0 auto;
+}
 .imgDetail{
     width: 600px;
   height: 500px;
-  padding-left: 50px;
+  object-fit: cover;
+}
+.containerInfo{
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  background-color: rgba(128, 128, 128, 0.24);
 }
 .infoDetail{
     display: flex;
@@ -25,36 +33,23 @@
     color: white;
     padding: 0px;
 }
-h4{
-    font-size: 20px;
-    color: #FFCB74;
-  }
-  p{
-    color: wheat;
-    font-size: 17px;
-    margin-left: 6px;
-    /* font-family: serif; */ 
-  }
-  .botonDeleteDog{
+.botonDeleteDog{
       background-color: #4e0000d0;
       color: white;
       border-radius: 6px;
       border-color: white;
-   padding: 5px;
-   font-size: 20px;
-   display: flex;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
-  }
-  .backDetail{
+      padding: 5px;
+      font-size: 20px;
+      display: flex;  
+}
+.backDetail{
     text-decoration: none;
     background-color: #111111a1;
     color: #FFCB74;
     border-radius: 6px;
     border-color: #FFCB74;
- padding: 5px;
- font-size: 18px;
- font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
+    font-size: 18px;
 }
 .algo{
   text-decoration: none;

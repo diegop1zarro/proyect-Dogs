@@ -34,7 +34,10 @@ function handleDelete(e){
     <div className='containerDetail'>
      {dogsDetails.InDataBase ? <button className='botonDeleteDog' onClick={(e)=>handleDelete(e)}>Delete Dog</button> : null}
     <h1 className='titleDetail'>{dogsDetails.name}</h1>
+    <div className='containerImgDetail'>
         <img className='imgDetail' src={dogsDetails.image} alt={dogsDetails.name}/>
+    </div>
+        <div className='containerInfo'> 
         <div className='infoDetail'>
         <h4>Temperaments: </h4> 
         <p>{dogsDetails.temperament? dogsDetails.temperament : dogsDetails.InDataBase? dogsDetails.temperaments.map(e => e.name + (' , ')) : 'no tiene'}</p>
@@ -53,6 +56,7 @@ function handleDelete(e){
         <div className='infoDetail'>
         <h4>weight imperial: </h4> 
         <p> {dogsDetails.weight}</p> 
+        </div>
         </div>
 </div> :
  <Loading/> 
