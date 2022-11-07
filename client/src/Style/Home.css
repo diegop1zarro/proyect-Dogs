@@ -23,12 +23,12 @@
 .botonFilter{
     background-color:var(--secondaryBackground);
     color: var(--secondaryColor);
-    /* border-radius: 6px;
-    border-color:var(--secondaryColor); */
     border: none;
     border-bottom: 1px solid var(--secondaryColor);
     padding: 3px;
     margin-left: 2px;
+    font-size: 15px;
+    padding: 6px;
  }
 .botonFilter:hover{
     background-color:var(--headingColor);
@@ -50,6 +50,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    margin: 10px;
 }
 
 .ContainerCards{
@@ -87,7 +88,8 @@
         font-size: 10px;
      }
     .CreateRefresh{
-        align-items: center;
+        align-items:flex-end;
+        margin: 0px;
     }
     .filtros{
         flex-direction: column;
