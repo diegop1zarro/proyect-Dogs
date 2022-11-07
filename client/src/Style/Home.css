@@ -77,18 +77,28 @@
 @media screen and (max-width:450px) {
     .ContainerCards{
        grid-template-columns: repeat(1,1fr);
-       margin-left: 4px;
+       margin:0 auto;
     }
     .titulitos{
-        font-size: 10px;
+        font-size: 15px;
+        margin-top: 15px;
     }
-    .botonFilter{
-        font-size: 7px;
-     }
     .botonesHome{
         font-size: 10px;
      }
     .CreateRefresh{
         align-items: center;
+    }
+    .filtros{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .filtros select{
+        width: 200px;
+        margin: 0 auto;
+        padding: 5px;
+        font-size: 15px;
     }
 }

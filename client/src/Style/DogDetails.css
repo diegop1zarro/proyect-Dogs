@@ -22,7 +22,7 @@
   object-fit: cover;
 }
 .containerInfo{
-  width: 400px;
+  width: 60%;
   height: auto;
   margin: 0 auto;
   background-color:var(--headingColor);
@@ -51,9 +51,32 @@
     border-color:var(--primaryColor);
     padding: 5px;
     font-size: 18px;
+    margin: 10px;
 }
 .algo{
   text-decoration: none;
   display: flex;
   justify-content:flex-start;
   }
+
+@media screen and (max-width:900px) {
+   
+}
+@media screen and (max-width:760px) {
+  
+}
+
+@media screen and (max-width:450px) {
+  .containerDetail{
+    width: 80%;
+  } 
+  .imgDetail{
+    width: 80%;
+    height: auto;
+  }
+  .infoDetail{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
