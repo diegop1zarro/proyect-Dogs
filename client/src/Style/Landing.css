@@ -1,16 +1,12 @@
 .botom{
-    /* color: white; */
-    color: #FFCB74;
-    /* background-color: #ad331d; */
-    background-color: #2F2F2F;
+    color:var(--primaryColor);
+    background-color:var(--secondaryBackground);
     font-size: 30px;
     transition: 0,5s;
 }
 .botom:hover{
-    /* background-color: #912020b7; */
-    background-color: #2f2f2faf;
-
+    background-color:var(--headingColor);
 }
 .bienvenido{
-    color: #FFCB74;
+    color:var(--primaryColor);
 }
