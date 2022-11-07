@@ -1,5 +1,5 @@
 .container{
-    background-color: #2f2f2fa4;
+    background-color:var(--secondaryBackground);
     width: 300px;
     height: auto;
     border-radius: 5px;
@@ -9,7 +9,7 @@
 }
 
 .title{
-    color: #FFCB74;
+    color:var(--primaryColor);
     font-size: 20px;
     cursor: pointer;
 }
