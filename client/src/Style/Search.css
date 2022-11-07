@@ -26,7 +26,7 @@
 }
 .error{
     color:var(--red);
-    font-size: 12px;
+    font-size: 15px;
     position:absolute;
 }
 .direction{
@@ -40,5 +40,8 @@
         font-size: 12px;
         padding: 0px;
         margin-bottom: 0px;
+    }
+    .error{
+        font-size: 12px;
     }
 }
