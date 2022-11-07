@@ -3,8 +3,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    /* background-color: #7a38247c; */
-    background-color: #2f2f2fa4;
+    background-color:var(--headingColor);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,8 +16,7 @@
 }
 
 .h1 {
-    /* color: rgb(253, 222, 120); */
-    color: #FFCB74;
+    color:var(--primaryColor);
   text-decoration-line: none;
 
 }
@@ -42,15 +40,15 @@
 }
 
 .list-item a {
-    color: white;
+    color:var(--primaryColor);
+    background-color:var(--secondaryBackground);
+    border:1px solid var(--primaryColor) ;
     height: 10%;
     padding: 10px 6px ;
-    border-bottom: 10px solid transparent;
+    text-decoration: none;
+    border-radius: 2px;
 }
 
-.list-item a:hover,
-.list-item a.active {
-    /* background-color: #ad331d; */
-    background-color: #2F2F2F;
-    color: white;
+.list-item a:hover{
+    background-color:var(--headingColor);
 }
