@@ -9,39 +9,55 @@
   height: 40vmin;
   pointer-events: none;
 }
-h4{
-  font-size: 20px;
-  color: #FFCB74;
-  margin: 0px;
-}
-p{
-  color: wheat;
-  font-size: 17px;
-  margin-left: 6px;
-}
-select{
-  color: rgb(134, 117, 70);
-  background-color: #0c0c0ca1;
-  border-radius: 6px;
-  border-color: rgb(134, 117, 70); 
-}
-option{
-  background-color: rgb(14, 13, 13);
-  color: rgb(134, 117, 70);
-}
+
 :root {
-  --primaryBackground: #111111;
-  --secondaryBackground: #191a1a;
+  --primaryBackground: #002e2c;
+  --secondaryBackground: #003b38;
+  /* --primaryColor: #FFCB74; */
+  /* --secondaryColor:#867546; */
   --primaryColor: #FFCB74;
-  --secondaryColor:#f5deb3;
+  --secondaryColor:#A2A77F;
+  --tertiaryColor:#EFF1C5;
+  --fourthColor:#867546;
   --greyDark: #7d8792;
-  --headingColor: #1f1f1f;
+  --headingColor: #2f2f2fa4;
   --white: #fff;
   --black: #000;
   --sliver: #bac8d3;
   --btnDelete: #4e0000d0;
   --red:#fd2222;
 }
+h4{
+  font-size: 20px;
+  color: var(--secondaryColor);
+  margin: 0px;
+}
+h3{
+  color: var(--secondaryColor);
+}
+h1{
+  color: var(--primaryColor);
+}
+p{
+  color:var(--tertiaryColor);
+  font-size: 17px;
+  margin-left: 6px;
+}
+select{
+  color:var(--secondaryColor);
+  background-color:var(--headingColor);
+  border: none;
+  border-bottom: 1px solid var(--secondaryColor);
+  border-color:var(--tertiaryColor); 
+}
+select:hover{
+  background-color: var(--secondaryBackground);
+}
+option{
+  background-color:var(--secondaryBackground);
+  color: var(--tertiaryColor);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

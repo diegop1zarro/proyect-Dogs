@@ -97,13 +97,13 @@ const handleSortAlf=(e)=>{
        <button className='botonesHome' onClick={(e)=> handleRefresh(e)}> Refresh page</button>
       </div>
      <div>
-       <h3 className='h3'>Options to order...</h3> 
+       <h3>Options to order...</h3> 
 <div className='filtros'>
 
   <div>
              <p  className='titulitos'>Alphabetically</p>
 <select onChange={(e)=> handleSortAlf(e)}>
-<option defaultValue='' disabled selected>Selecciona una opción</option>
+<option defaultValue='' disabled selected>Select an option</option>
     <option value='A_Z' >A - Z</option>
     <option value='Z_A' >Z - A</option>
 </select>
@@ -112,9 +112,9 @@ const handleSortAlf=(e)=>{
 <div>
             <p className='titulitos'> By weight</p>
 <select onChange={(e)=> handleOrdenPeso(e)}>
-<option defaultValue='' disabled selected>Selecciona una opción</option>
-   <option value='Asc'> menor a mayor</option>
-  <option value='Desc'>mayor a menor</option>
+<option defaultValue='' disabled selected>Select an option</option>
+   <option value='Asc'>low to hight</option>
+  <option value='Desc'>hight to low</option>
 </select>
 </div>
 
@@ -122,7 +122,7 @@ const handleSortAlf=(e)=>{
 <div>
          <p className='titulitos'>by Temperament</p>
 <select onChange={(e)=> handleSelect(e)}>
-<option defaultValue='' disabled selected>Selecciona una opción</option>
+<option defaultValue='' disabled selected>Select an option</option>
 {Alltemperaments.map((Eltemperamento, i )=> (
   <option key={i}  value={Eltemperamento.name}>{Eltemperamento.name}</option>
   ))}
@@ -152,7 +152,7 @@ const handleSortAlf=(e)=>{
       dogs={dogs.length}
       paginado= {paginado}
       />
-       { dogs.error || dogs.errorDB ? <h4> no se ha encontrado el resultado</h4>:
+       { dogs.error || dogs.errorDB ? <h4> no result found</h4>:
        
         DogsActuales.length > 0 ?
      <div className='ContainerCards'>
@@ -167,7 +167,7 @@ const handleSortAlf=(e)=>{
              id={dog.id}
              temperament={dog.temperament? dog.temperament : dog.InDataBase? dog.temperaments.map(e => e.name + (' , ')) : 'No temperaments found'}
             weight={dog.weight}
-            CreadoPorDiego={ dog.Creado_por_Diego ? dog.Creado_por_Diego: 'Existente'}
+            CreadoPorDiego={ dog.Creado_por_Diego ? dog.Creado_por_Diego: 'Existing'}
             /> 
             </div> 
             )
