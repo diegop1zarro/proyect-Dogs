@@ -40,9 +40,12 @@ align-content: flex-start;
 }
 /* .contenedorMenor button:hover */
 .contenedorMenor input:hover{
-    background-color: var(--greyDark);
+    background-color: var(--headingColor);
     color: var(--primaryColor);
   }
+.contenedorMenor select:hover{
+    background-color: var(--primaryBackground);
+}
 .contenedorMenor label{
     color:var(--white);
     font-size: 20px;
@@ -67,11 +70,11 @@ align-content: flex-start;
 .inputsPYG{
     display: flex;
     align-items: center;
-    background-color:#2f2f2fa4 ;
+    background-color:var(--headingColor);
     justify-content: center;
 }
 .errorCreate{
-color: red;
+color:var(--red);
 }
 .button_Create{
     width: 80%;
@@ -85,7 +88,7 @@ color: red;
     margin-bottom: 10px;
 }
 .button_Create:hover{
-    background-color: var(--greyDark);
+    background-color: var(--headingColor);
     color: var(--primaryColor);
 
 }
