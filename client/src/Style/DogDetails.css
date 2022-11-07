@@ -17,8 +17,8 @@
   margin: 0 auto;
 }
 .imgDetail{
-    width: 600px;
-  height: 500px;
+    width: 80%;
+  height: auto;
   object-fit: cover;
 }
 .containerInfo{
@@ -70,10 +70,6 @@
   .containerDetail{
     width: 80%;
   } 
-  .imgDetail{
-    width: 80%;
-    height: auto;
-  }
   .infoDetail{
     flex-direction: column;
     justify-content: center;
