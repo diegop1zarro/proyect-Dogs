@@ -1,6 +1,6 @@
 
 .containerDetail{
-    background-color: #2f2f2fa4;
+    background-color:var(--secondaryBackground);
     width: 800px;
     height: auto;
     position: relative;
@@ -9,7 +9,7 @@
     padding: 10px;
 }
 .titleDetail{
-    color: #FFCB74;
+    color:var(--primaryColor);
     font-size: 30px;
     text-decoration: none;
 }
@@ -25,29 +25,30 @@
   width: 400px;
   height: auto;
   margin: 0 auto;
-  background-color: rgba(128, 128, 128, 0.24);
+  background-color:var(--headingColor);
+  padding: 20px;
+  border-radius:5px;
 }
 .infoDetail{
     display: flex;
-   align-items: baseline;
-    color: white;
+    align-items: baseline;
     padding: 0px;
 }
 .botonDeleteDog{
-      background-color: #4e0000d0;
-      color: white;
+      background-color:var(--btnDelete);
+      color:var(--secondaryColor);
       border-radius: 6px;
-      border-color: white;
+      border-color: var(--secondaryColor);
       padding: 5px;
       font-size: 20px;
       display: flex;  
 }
 .backDetail{
     text-decoration: none;
-    background-color: #111111a1;
-    color: #FFCB74;
+    background-color:var(--secondaryBackground);
+    color:var(--primaryColor);
     border-radius: 6px;
-    border-color: #FFCB74;
+    border-color:var(--primaryColor);
     padding: 5px;
     font-size: 18px;
 }
