@@ -1,42 +1,30 @@
 .paginationBttns {
-  /* list-style: none;
-  display: flex;
-  justify-content: center; */
   padding: 10px;
   margin: 1px;
   border-radius: 5px;
-  border: 1px solid rgb(134, 117, 70);
-  color:rgb(134, 117, 70);
-  background-color: #313131a1;
-  /* border: #D7C8B6 2px solid; */
+  border: 1px solid var(--fourthColor);
+  color:var(--tertiaryColor);
+  background-color: var(--headingColor);
 }
 .paginationBttns:hover{
-   /* background-color: #ff922b; */
-   background-color: #2F2F2F;
-   color: white;
+   background-color:var(--secondaryBackground);
+   color: var(--primaryColor);
 }
-/* .paginationBttns:active{
-  background-color: rgb(134, 117, 70);
-  color: rgb(243, 30, 30);
-
-} */
 .paginationBttns:focus{
-  background-color: rgb(134, 117, 70);
-  color: white;
-
+  background-color:var(--secondaryBackground);
+  color: var(--primaryColor);
 }
 .PrevNextPagination{
   padding: 10px;
   margin: 1px;
   border-radius: 5px;
-  border: 1px solid rgb(134, 117, 70);
-  color:rgb(134, 117, 70);
-  background-color: #313131a1;
+  border: 1px solid var(--fourthColor);
+  color:var(--fourthColor);
+  background-color:var(--headingColor);
 }
 .PrevNextPagination:hover{
-  /* background-color: #ff922b; */
-  background-color: #2F2F2F;
-  color: white;
+  background-color:var(--secondaryBackground);
+  color: var(--primaryColor);
 }
   
 @media screen and (max-width:450px) {
